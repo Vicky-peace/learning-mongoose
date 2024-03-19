@@ -13,3 +13,13 @@ export const addUniversity = (req,res) =>{
     res.status(500).json({error: err.message});
    });
 };
+
+export const getUniversity = (req,res) => {
+    University.find({})
+    .then(universities => {
+        res.json(universities);
+    })
+    .catch(err => {
+        res.status(500).json({error: err.message});
+    });
+};
